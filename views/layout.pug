@@ -1,7 +1,17 @@
 doctype html
 html
   head
-    title= title
+    link(rel='stylesheet', href='https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='/events') Frozen Chain
+    ul.nav.main-nav.justify-content-center.shadow-sm.bg-white.fixed-top
+      li.nav-item.col-6.text-center(class={"active": active === 'events'})
+        a.nav-link.text-dark(href='/events') Events
+      li.nav-item.col-6.text-center(class={"active": active === 'coupons'})
+        a.nav-link.text-dark(href='/coupons') Coupons
+
+    .row.p-2
+      .col-12
+        block content
