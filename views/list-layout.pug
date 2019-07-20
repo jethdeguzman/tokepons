@@ -3,6 +3,11 @@ html
   head
     link(rel='stylesheet', href='https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+      body {
+      background: #f5f5f5;
+      }
+
   body
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       a.navbar-brand(href='/events') Frozen Chain
@@ -12,6 +17,6 @@ html
       li.nav-item.col-6.text-center(class={"active": active === 'coupons'})
         a.nav-link.text-dark(href='/coupons') Coupons
 
-    .row.p-2
+    .row.p-2(class="list-container")
       .col-12
         block content

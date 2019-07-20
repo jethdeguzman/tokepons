@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+      body {
+      background: #ffffff;
+      }
+
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='/events')
+        span
+          i(data-feather='circle')
+        span.ml-2= navTitle
+
+    .row.p-2(class="view-container")
+      .col-12
+        block content

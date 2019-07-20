@@ -1,13 +1,14 @@
-extends layout
+extends list-layout
 
 block content
-  .card.mt-3
-    .card-body
-      .row
-        .col-2
-          img.img-fluid(src='' alt='...')
-        .col-10
-          h5.card-title Card Title
-          h6.card-subtitle.mb-2.text-muted Card Subtitle
-          p.card-text With supporting text below as a natural lead-in to additional content.
+  a(href="/coupons/1", class="link-card")
+    .card.mt-3
+      .card-body
+        .row
+          .col-2
+            img.img-fluid(src='' alt='...')
+          .col-10
+            h5.card-title Card Title
+            h6.card-subtitle.mb-2.text-muted Card Subtitle
+            p.card-text With supporting text below as a natural lead-in to additional content.
 
