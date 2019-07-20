@@ -1,17 +1,21 @@
 var express = require('express');
 var router = express.Router();
+var Coupon = new require('./../lib')
 
-/* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/events')
 });
 
 router.get('/claim/:id', function (req, res) {
-  res.send('claim')
+  Coupon.transferToCustomer(req.params.id).then((resp) => {
+    res.send(resp.hash)
+  });
 });
 
 router.get('/redeem/:id', function (req, res) {
-  res.send('redeem')
+  Coupon.redeem(req.params.id).then((resp) => {
+    res.send(resp.hash)
+  });
 });
 
 module.exports = router;

@@ -14,7 +14,7 @@
 }
 
 .nav-item.active {
-    color: #0062cc;
+    color: #dd4444;
     background-color: transparent;
     border-color: transparent transparent #f3f3f3;
     border-bottom: 3px solid !important;

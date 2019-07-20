@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var Coupon = new require('./../lib');
 
 router.get('/', function (req, res, next) {
-  res.render('coupons', { active: 'coupons' });
+  Coupon.tokensOfCustomer().then((tokens) => {
+    res.render('coupons', { active: 'coupons' });
+  });
+
 });
 
 router.get('/:id', function (req, res) {

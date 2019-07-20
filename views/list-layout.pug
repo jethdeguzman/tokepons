@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
     link(rel='stylesheet', href='https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     style.
@@ -10,21 +11,12 @@ html
     script(type='text/javascript' src='https://rawgit.com/schmich/instascan-builds/master/instascan.min.js')
 
   body
-    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
-      a.navbar-brand(href='/events') Frozen Chain
-    if process.env.USER == "customer"
+    nav.navbar.navbar-expand-md.navbar-dark.bg-danger.fixed-top.justify-content-between
+      a.navbar-brand.mx-auto.d-block.text-center.order-0.order-md-1.w-25(href='/events') Tokepons
       ul.nav.main-nav.justify-content-center.shadow-sm.bg-white.fixed-top
         li.nav-item.col-6.text-center(class={"active": active === 'events'})
           a.nav-link.text-dark(href='/events') Events
         li.nav-item.col-6.text-center(class={"active": active === 'coupons'})
-          a.nav-link.text-dark(href='/coupons') Coupons
-    if process.env.USER == "merchant"
-      ul.nav.main-nav.justify-content-center.shadow-sm.bg-white.fixed-top
-        li.nav-item.col-4.text-center(class={"active": active === 'events'})
-          a.nav-link.text-dark(href='/events') Events
-        li.nav-item.col-4.text-center(class={"active": active === 'scan'})
-          a.nav-link.text-dark(href='/scan') Scan
-        li.nav-item.col-4.text-center(class={"active": active === 'coupons'})
           a.nav-link.text-dark(href='/coupons') Coupons
 
     .row.p-2(class="list-container")
