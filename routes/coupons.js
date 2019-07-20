@@ -6,7 +6,9 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res) {
-  res.render('coupon', { navTitle: "Redeem Coupon" })
+  const redeemLink = 'http://localhost:3000/redeem/' + req.params.id
+  const qrLink = "https://chart.googleapis.com/chart?cht=qr&chl=" + redeemLink + "&choe=UTF-8&chs=500x500"
+  res.render('coupon', { navTitle: "Redeem Coupon", qrLink })
 });
 
 module.exports = router;

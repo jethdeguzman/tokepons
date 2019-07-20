@@ -7,15 +7,25 @@ html
       body {
       background: #f5f5f5;
       }
+    script(type='text/javascript' src='https://rawgit.com/schmich/instascan-builds/master/instascan.min.js')
 
   body
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       a.navbar-brand(href='/events') Frozen Chain
-    ul.nav.main-nav.justify-content-center.shadow-sm.bg-white.fixed-top
-      li.nav-item.col-6.text-center(class={"active": active === 'events'})
-        a.nav-link.text-dark(href='/events') Events
-      li.nav-item.col-6.text-center(class={"active": active === 'coupons'})
-        a.nav-link.text-dark(href='/coupons') Coupons
+    if process.env.USER == "customer"
+      ul.nav.main-nav.justify-content-center.shadow-sm.bg-white.fixed-top
+        li.nav-item.col-6.text-center(class={"active": active === 'events'})
+          a.nav-link.text-dark(href='/events') Events
+        li.nav-item.col-6.text-center(class={"active": active === 'coupons'})
+          a.nav-link.text-dark(href='/coupons') Coupons
+    if process.env.USER == "merchant"
+      ul.nav.main-nav.justify-content-center.shadow-sm.bg-white.fixed-top
+        li.nav-item.col-4.text-center(class={"active": active === 'events'})
+          a.nav-link.text-dark(href='/events') Events
+        li.nav-item.col-4.text-center(class={"active": active === 'scan'})
+          a.nav-link.text-dark(href='/scan') Scan
+        li.nav-item.col-4.text-center(class={"active": active === 'coupons'})
+          a.nav-link.text-dark(href='/coupons') Coupons
 
     .row.p-2(class="list-container")
       .col-12
